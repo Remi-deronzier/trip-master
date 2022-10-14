@@ -45,7 +45,6 @@ public class TourGuideController {
         return JsonStream.serialize(visitedLocation.location);
     }
 
-    // TODO: Change this method to no longer return a List of Attractions.
     // Instead: Get the closest five tourist attractions to the user - no matter how
     // far away they are.
     // Return a new JSON object that contains:
@@ -78,7 +77,6 @@ public class TourGuideController {
 
     @RequestMapping("/getAllCurrentLocations")
     public String getAllCurrentLocations() {
-        // TODO: Get a list of every user's most recent location as JSON
         // - Note: does not use gpsUtil to query for their current location,
         // but rather gathers the user's current location from their stored location
         // history.
