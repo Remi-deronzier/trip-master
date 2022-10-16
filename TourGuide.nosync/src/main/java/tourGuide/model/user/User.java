@@ -1,4 +1,4 @@
-package tourGuide.user;
+package tourGuide.model.user;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -70,7 +70,7 @@ public class User {
 		visitedLocations.clear();
 	}
 
-	public void addUserReward(UserReward userReward) {
+	synchronized public void addUserReward(UserReward userReward) {
 		if (userRewards.stream().filter(r -> r.attraction.attractionName.equals(userReward.attraction.attractionName))
 				.count() == 0) {
 			userRewards.add(userReward);

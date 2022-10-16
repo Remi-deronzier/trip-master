@@ -1,4 +1,4 @@
-package tourGuide;
+package tourGuide.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,19 +17,20 @@ import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
 import rewardCentral.RewardCentral;
-import tourGuide.service.RewardsService;
-import tourGuide.service.TourGuideService;
-import tourGuide.user.User;
+import tourGuide.model.NearAttraction;
+import tourGuide.model.user.User;
+import tourGuide.service.impl.RewardsServiceImpl;
+import tourGuide.service.impl.TourGuideServiceImpl;
 import tripPricer.Provider;
 
 @RestController
 public class TourGuideController {
 
     @Autowired
-    TourGuideService tourGuideService;
+    TourGuideServiceImpl tourGuideService;
 
     @Autowired
-    RewardsService rewardsService;
+    RewardsServiceImpl rewardsService;
 
     @Autowired
     RewardCentral rewardCentral;
