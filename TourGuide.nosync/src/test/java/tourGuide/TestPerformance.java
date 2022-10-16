@@ -59,15 +59,11 @@ public class TestPerformance {
 
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
-		// for (User user : allUsers) {
-		// tourGuideService.trackUserLocation(user);
-		// }
 		tourGuideService.trackAllUsersLocations(allUsers);
 		rewardsService.calculateRewardsAllUsers(allUsers);
 		stopWatch.stop();
 		tourGuideService.tracker.stopTracking();
 		tourGuideService.shutdownService();
-		// rewardsService.shutdownService();
 
 		System.out.println("highVolumeTrackLocation: Time Elapsed: "
 				+ TimeUnit.MILLISECONDS.toSeconds(stopWatch.getTime()) + " seconds.");
@@ -91,7 +87,6 @@ public class TestPerformance {
 		allUsers = tourGuideService.getAllUsers();
 		allUsers.forEach(u -> u.addToVisitedLocations(new VisitedLocation(u.getUserId(), attraction, new Date())));
 
-		// allUsers.forEach(u -> rewardsService.calculateRewards(u));
 		System.out.println("Start Calculate rewards");
 		rewardsService.calculateRewardsAllUsers(allUsers);
 

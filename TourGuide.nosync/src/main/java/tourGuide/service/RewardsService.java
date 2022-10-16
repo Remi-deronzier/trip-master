@@ -1,5 +1,7 @@
 package tourGuide.service;
 
+import java.util.List;
+
 import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import tourGuide.model.user.User;
@@ -14,4 +16,6 @@ public interface RewardsService {
     public void setDefaultProximityBuffer();
 
     public void setProximityBuffer(int proximityBuffer);
+
+    public void calculateRewardsAllUsers(List<User> users);
 }

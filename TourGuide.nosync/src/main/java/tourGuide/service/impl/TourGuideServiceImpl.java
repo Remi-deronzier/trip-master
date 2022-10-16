@@ -118,10 +118,9 @@ public class TourGuideServiceImpl implements TourGuideService {
 				UserLocation userLocation = future.get();
 				User user = userLocation.getUser();
 				VisitedLocation visitedLocation = userLocation.getVisitedLocation();
-				// logger.debug("END track user location of user {}", user.getUserName());
+				logger.debug("END track user location of user {}", user.getUserName());
 				visitedLocations.add(visitedLocation);
 				user.addToVisitedLocations(visitedLocation);
-				// rewardsService.calculateRewards(user);
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -134,7 +133,7 @@ public class TourGuideServiceImpl implements TourGuideService {
 
 	private Callable<UserLocation> getCallableVisitedLocation(User user) {
 		return () -> {
-			// logger.debug("START track user location of user {}", user.getUserName());
+			logger.debug("START track user location of user {}", user.getUserName());
 			return new UserLocation(gpsUtil.getUserLocation(user.getUserId()), user);
 		};
 	}
