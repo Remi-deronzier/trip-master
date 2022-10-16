@@ -1,4 +1,4 @@
-package tourGuide;
+package tourGuide.model;
 
 import gpsUtil.location.Location;
 
